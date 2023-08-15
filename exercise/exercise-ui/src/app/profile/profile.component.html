@@ -1,0 +1,38 @@
+<div *ngIf="userData" class="form-container">
+    <h2>Welcome, {{ userData.firstName }} {{ userData.lastName }}</h2>
+
+    <form class="profile-form">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="userData.firstName" name="firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="userData.lastName" name="lastName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Street Address</mat-label>
+            <textarea matInput [(ngModel)]="userData.streetAddress" name="streetAddress"></textarea>
+        </mat-form-field>
+
+        <!-- Non-Editable Fields -->
+        <div class="readonly-field">
+            <label>City:</label>
+            <p>{{ userData.city }}</p>
+        </div>
+
+        <div class="readonly-field">
+            <label>State:</label>
+            <p>{{ userData.state }}</p>
+        </div>
+
+        <div class="readonly-field">
+            <label>Zip Code:</label>
+            <p>{{ userData.zipCode }}</p>
+        </div>
+
+        <button mat-raised-button (click)="onUpdate()">Update</button>
+    </form>
+</div>

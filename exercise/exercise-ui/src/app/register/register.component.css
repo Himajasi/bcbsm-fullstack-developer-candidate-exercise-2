@@ -1,0 +1,56 @@
+.form-container {
+    max-width: 650px;
+    margin: 4rem auto;
+    padding: 3rem;
+    border: 1px solid #f3f4f6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .registration-form {
+    gap: 2rem;
+  }
+  
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .input-field {
+    flex: 1;
+    margin-right: 0.5rem;
+  }
+  
+  .input-field.full-width {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  btn-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .message-container {
+    margin-top: 1rem;
+  }
+  
+  p.success {
+    color: #4CAF50;  /* green color for successful message */
+    text-align: center;
+  }
+  
+  p.error {
+    color: #F44336;  /* red color for error message */
+    text-align: center;
+  }
+  

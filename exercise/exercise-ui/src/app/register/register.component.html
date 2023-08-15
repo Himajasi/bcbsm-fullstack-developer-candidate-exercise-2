@@ -1,0 +1,75 @@
+<div class="form-container">
+    <h2 class="form-title">User Registration</h2>
+  
+    <form (ngSubmit)="register()" class="registration-form">
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="user.firstName" name="firstName" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="user.lastName" name="lastName" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field full-width">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [(ngModel)]="user.dateOfBirth" name="dateOfBirth" matInput [matDatepicker]="picker" placeholder="MM-DD-YYYY">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field full-width">
+          <mat-label>Street Address</mat-label>
+          <textarea matInput [(ngModel)]="user.streetAddress" name="streetAddress"></textarea>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="user.city" name="city" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>State</mat-label>
+            <mat-select [(ngModel)]="user.state" name="state">
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Zip Code</mat-label>
+            <input matInput type="number" pattern="\d{5}" [(ngModel)]="user.zipCode" name="zipCode">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Username</mat-label>
+            <input matInput pattern="^[a-zA-Z0-9]*$" [(ngModel)]="user.username" name="username" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="outline" class="input-field full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [(ngModel)]="user.password" name="password" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="btn-container">
+        <button mat-raised-button type="submit">Register</button>
+      </div>
+    </form>
+  
+    <div class="message-container">
+     <p *ngIf="message" [ngClass]="{'success': isSuccess, 'error': !isSuccess}" [innerHTML]="message"></p>
+    </div>
+  </div>
+  
